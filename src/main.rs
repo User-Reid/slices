@@ -1,13 +1,10 @@
-fn print_length(x: &[i32]) {
-    println!("{}", x.len());
-}
-
 fn main() {
-    let values: [i32; 6] = [4, 8, 15, 16, 23, 42];
+    let mut my_array: [i32; 5] = [10, 15, 20, 25, 30];
 
-    let regular_array: &[i32; 6] = &values;
+    let my_slice: &mut [i32] = &mut my_array[2..4];
+    println!("{my_slice:?}");
 
-    let slice_of_three: &[i32] = &values[..3];
-
-    print_length(&values);
+    my_slice[0] = 100;
+    println!("{my_slice:?}");
+    println!("{my_array:?}")
 }
